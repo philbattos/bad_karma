@@ -1,0 +1,31 @@
+<h1>Positions</h1>
+
+<h2>Defense:</h2>
+  <ul>
+    <% @defense.each do |player| %>
+    <li>
+      <%= link_to player.first_name, player_path(player.first_name.downcase) %>
+    </li>
+    <% end %>
+  </ul>
+
+<h2>Midfield:</h2>
+  <ul>
+    <% @midfield.each do |player| %>
+    <li>
+      <%= link_to player.first_name, player_path(player.first_name.downcase) %>
+    </li>
+    <% end %>
+  </ul>
+
+<h2>Forwards:</h2>
+  <ul>
+    <% @forwards.each do |player| %>
+    <li>
+      <%= link_to player.first_name, player_path(player.first_name.downcase) %>
+    </li>
+    <% end %>
+  </ul>
+
+<p><b><%= link_to "BACK", players_path %></b> to Player listings
+</p>

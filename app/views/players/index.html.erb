@@ -1,0 +1,29 @@
+<h1>Bad Karma</h1>
+
+<h2>Players</h2>
+
+<ul id="players">
+  <!-- this opens a list; not sure what "id=players" means -->
+  <% @players.each do |player| %>
+    <!-- this creates a block that iterates through all the players in the database -->
+    <li>
+      <!-- this creates a list item -->
+      <%= link_to player.first_name, player_path(player.first_name.downcase) %>
+        <!-- this creates a link using the article title -->
+        <!-- the link goes to "player_path(player)" -->
+    </li>
+      <!-- this ends list item -->
+  <% end %>
+    <!-- this ends the block -->
+</ul>
+  <!-- this ends the list -->
+
+<p>Find players by their <%= link_to "Position", positions_path %>.</p>
+
+<p>New players can <b><%= link_to "create", new_player_path %></b> their own page.
+
+<!-- <% if logged_in? %>
+<p>See all current <b><%= link_to "Users", users_path %></b>
+</p>
+<% end %> -->
+

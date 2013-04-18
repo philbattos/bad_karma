@@ -1,0 +1,21 @@
+<h2><%= @player.first_name %> <%= @player.last_name %>
+</h2>
+
+<h3><p>Name: <%= @player.first_name %>
+<p>Position: <%= @player.position %>
+<p>Gender: <%= @player.gender %>
+<p>Years on the team: <%= @player.years_on_team %>
+<p>Jersey number: <%= @player.jersey_number %>
+</h3>
+
+<% if logged_in? %>
+  <p><b><%= link_to "DELETE", player_path(@player), method: :delete, confirm: "Are you sure you want to delete this page?" %></b> this player page.
+  <p><b><%= link_to "EDIT", edit_player_path(@player.first_name.downcase) %></b> this player page.
+  </p>
+<% end %>
+
+<p><b><%= link_to "BACK", players_path %></b> to Player listings
+</p>
+
+
+

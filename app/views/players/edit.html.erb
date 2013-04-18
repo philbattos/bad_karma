@@ -1,0 +1,40 @@
+<h1>Edit a Player page</h1>
+
+<%= form_for(@player) do |form| %>
+  <ul>
+  <% @player.errors.full_messages.each do |error| %>
+    <li><%= error %></li>
+  <% end %>
+  </ul>
+  <p>
+    <%= form.label :first_name %><br />
+    <%= form.text_field :first_name %>
+  </p>
+  <p>
+    <%= form.label :last_name %><br />
+    <%= form.text_field :last_name %>
+  </p>
+  <p>
+    <%= form.label :position %><br />
+    <%= form.select :position, ["defense", "midfield", "forward", "goalkeeper"] %>
+  </p>
+  <p>
+    <%= form.label :gender %><br />
+    <%= form.select :gender, ["female", "male"] %>
+  </p>
+  <p>
+    <%= form.label :years_on_team %><br />
+    <%= form.select :years_on_team, [0, 1, 2, 3, 4, 5] %>
+  </p>
+  <p>
+    <%= form.label :jersey_number %><br />
+    <%= form.text_field :jersey_number %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
+<p>
+  <b><%= link_to "BACK", players_path %></b> to Player listings
+</p>
