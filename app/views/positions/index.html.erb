@@ -1,31 +1,154 @@
+<%= render 'layouts/nav_bar_top' %>
+
 <h1>Positions</h1>
 
-<h2>Defense:</h2>
-  <ul>
-    <% @defense.each do |player| %>
-    <li>
-      <%= link_to player.first_name, player_path(player.first_name.downcase) %>
-    </li>
-    <% end %>
-  </ul>
+<div id="wrapper">
+  <div class="row">
+    <div class="span4">
+      <h2 align="left"><<</h2>
+    </div>
+    <div class="span4">
+      <h2 align="center">DEFENSE</h2>
+    </div>
+    <div class="span4">
+      <h2 align="right">>></h2>
+    </div>
+  </div>
+  <div id="slide-wrap">
+    <div id="inner-wrap">
 
-<h2>Midfield:</h2>
-  <ul>
-    <% @midfield.each do |player| %>
-    <li>
-      <%= link_to player.first_name, player_path(player.first_name.downcase) %>
-    </li>
-    <% end %>
-  </ul>
+      <div class="row demo-tiles">
 
-<h2>Forwards:</h2>
-  <ul>
-    <% @forwards.each do |player| %>
-    <li>
-      <%= link_to player.first_name, player_path(player.first_name.downcase) %>
-    </li>
-    <% end %>
-  </ul>
+      <% @defense.each do |player| %>
+
+        <div class="span3">
+          <div class="tile">
+            <img class="tile-image big-illustration" alt="" src="http://placehold.it/100x100/ffccaa/000000&text=[image]" />
+            <h3 class="tile-title"><%= player.first_name %> <%= player.last_name %></h3>
+            <p><%= player.position.upcase %></p>
+            <%= link_to "More Info", player_path(player.id), :class => "btn btn-primary btn-large btn-block" %>
+          </div>
+        </div>
+
+      <% end %>
+
+      </div>
+
+    </div>
+  </div>
+<!-- <h6 align="center"><< scroll >></h6> -->
+</div>
+
+
+<div id="wrapper">
+  <div class="row">
+    <div class="span4">
+      <h2 align="left"><<</h2>
+    </div>
+    <div class="span4">
+      <h2 align="center">MIDFIELD</h2>
+    </div>
+    <div class="span4">
+      <h2 align="right">>></h2>
+    </div>
+  </div>
+  <div id="slide-wrap">
+    <div id="inner-wrap">
+
+      <div class="row demo-tiles">
+
+      <% @midfield.each do |player| %>
+
+        <div class="span3">
+          <div class="tile">
+            <img class="tile-image big-illustration" alt="" src="http://placehold.it/100x100/ffccaa/000000&text=[image]" />
+            <h3 class="tile-title"><%= player.first_name %> <%= player.last_name %></h3>
+            <p><%= player.position.upcase %></p>
+            <%= link_to "More Info", player_path(player.id), :class => "btn btn-primary btn-large btn-block" %>
+          </div>
+        </div>
+
+      <% end %>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<div id="wrapper">
+  <div class="row">
+    <div class="span4">
+      <h2 align="left"><<</h2>
+    </div>
+    <div class="span4">
+      <h2 align="center">OFFENSE</h2>
+    </div>
+    <div class="span4">
+      <h2 align="right">>></h2>
+    </div>
+  </div>
+  <div id="slide-wrap">
+    <div id="inner-wrap">
+
+      <div class="row demo-tiles">
+
+      <% @forwards.each do |player| %>
+
+        <div class="span3">
+          <div class="tile">
+            <img class="tile-image big-illustration" alt="" src="http://placehold.it/100x100/ffccaa/000000&text=[image]" />
+            <h3 class="tile-title"><%= player.first_name %> <%= player.last_name %></h3>
+            <p><%= player.position.upcase %></p>
+            <%= link_to "More Info", player_path(player.id), :class => "btn btn-primary btn-large btn-block" %>
+          </div>
+        </div>
+
+      <% end %>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<div id="wrapper">
+  <div class="row">
+    <div class="span4">
+      <h2 align="left"><<</h2>
+    </div>
+    <div class="span4">
+      <h2 align="center">GOALKEEPERS</h2>
+    </div>
+    <div class="span4">
+      <h2 align="right">>></h2>
+    </div>
+  </div>
+  <div id="slide-wrap">
+    <div id="inner-wrap">
+
+      <div class="row demo-tiles">
+
+      <% @goalkeepers.each do |player| %>
+
+        <div class="span3">
+          <div class="tile">
+            <img class="tile-image big-illustration" alt="" src="http://placehold.it/100x100/ffccaa/000000&text=[image]" />
+            <h3 class="tile-title"><%= player.first_name %> <%= player.last_name %></h3>
+            <p><%= player.position.upcase %></p>
+            <%= link_to "More Info", player_path(player.id), :class => "btn btn-primary btn-large btn-block" %>
+          </div>
+        </div>
+
+      <% end %>
+
+      </div>
+
+    </div>
+  </div>
+</div>
 
 <p><b><%= link_to "BACK", players_path %></b> to Player listings
 </p>

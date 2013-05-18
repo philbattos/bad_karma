@@ -1,6 +1,7 @@
 class PlayersController < ApplicationController
+  layout "application"
 
-  before_filter :require_login, except: [:show, :index, :new, :create]
+  before_filter :require_login, only: [:edit, :update, :destroy]
 
   # def home
   #   # render sends template(html) to view to display
@@ -24,7 +25,7 @@ class PlayersController < ApplicationController
     # @player.years_on_team = params[:player][:years_on_team]
     # @player.jersey_number = params[:player][:jersey_number]
     @player.save
-    redirect_to player_path(@player.first_name.downcase, message: 'Thank you for submitting a new player listing. [And admin will review your submission soon.]')
+    redirect_to player_path(@player.id, notice: 'Thank you for submitting a new player listing. [And admin will review your submission soon.]')
   end
 
   def new
@@ -32,18 +33,18 @@ class PlayersController < ApplicationController
   end
 
   def edit
-    @player = Player.find_by_first_name(params[:id].capitalize)
+    @player = Player.find(params[:id])
   end
 
   def show
-    @player = Player.find_by_first_name(params[:id].capitalize)
-    # @player = Player.find(params[:id])
+    # @player = Player.find_by_first_name(params[:id].capitalize)
+    @player = Player.find(params[:id])
   end
 
   def update
     @player = Player.find(params[:id])
     @player.update_attributes(params[:player])
-    redirect_to player_path(@player.first_name.downcase)
+    redirect_to player_path(@player.id)
   end
 
   def destroy

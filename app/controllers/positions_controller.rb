@@ -5,6 +5,7 @@ class PositionsController < ApplicationController
     @defense = Player.where(:position => "defense")
     @midfield = Player.where(:position => "midfield")
     @forwards = Player.where(:position => "forward")
+    @goalkeepers = Player.where(:position => "goalkeeper")
 
     # render :template => "positions/index"
   end

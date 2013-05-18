@@ -1,38 +1,49 @@
-<h1>Edit a Player page</h1>
+<%= render 'layouts/nav_bar_top' %>
 
-<%= form_for(@player) do |form| %>
-  <ul>
-  <% @player.errors.full_messages.each do |error| %>
-    <li><%= error %></li>
+<h1>Edit page:</h1>
+
+<h1><%= @player.first_name %> <%= @player.last_name %>
+</h1>
+
+<% if logged_in? && current_user.username.downcase == "admin" %>
+  <%= form_for(@player) do |form| %>
+    <ul>
+    <% @player.errors.full_messages.each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+    </ul>
+    <p>
+      <%= form.label :first_name %><br />
+      <%= form.text_field :first_name %>
+    </p>
+    <p>
+      <%= form.label :last_name %><br />
+      <%= form.text_field :last_name %>
+    </p>
+    <p>
+      <%= form.label :position %><br />
+      <%= form.select :position, ["defense", "midfield", "forward", "goalkeeper"] %>
+    </p>
+    <p>
+      <%= form.label :gender %><br />
+      <%= form.select :gender, ["female", "male"] %>
+    </p>
+    <p>
+      <%= form.label :years_on_team %><br />
+      <%= form.select :years_on_team, [0, 1, 2, 3, 4, 5] %>
+    </p>
+    <p>
+      <%= form.label :jersey_number %><br />
+      <%= form.text_field :jersey_number %>
+    </p>
+    <p>
+      <%= form.submit %>
+    </p>
   <% end %>
-  </ul>
+<% else %>
   <p>
-    <%= form.label :first_name %><br />
-    <%= form.text_field :first_name %>
-  </p>
-  <p>
-    <%= form.label :last_name %><br />
-    <%= form.text_field :last_name %>
-  </p>
-  <p>
-    <%= form.label :position %><br />
-    <%= form.select :position, ["defense", "midfield", "forward", "goalkeeper"] %>
-  </p>
-  <p>
-    <%= form.label :gender %><br />
-    <%= form.select :gender, ["female", "male"] %>
-  </p>
-  <p>
-    <%= form.label :years_on_team %><br />
-    <%= form.select :years_on_team, [0, 1, 2, 3, 4, 5] %>
-  </p>
-  <p>
-    <%= form.label :jersey_number %><br />
-    <%= form.text_field :jersey_number %>
-  </p>
-  <p>
-    <%= form.submit %>
-  </p>
+  <h2>*** You do not have permission to edit this player's page ***</h2>
+  <br>
 <% end %>
 
 <p>

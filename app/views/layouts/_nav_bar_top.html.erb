@@ -1,0 +1,129 @@
+<div class="container">
+  <div class="row demo-row">
+    <div class="span12">
+      <div class="navbar navbar-inverse">
+        <div class="navbar-inner">
+          <div class="container">
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <div class="nav-collapse collapse">
+              <ul class="nav">
+                <li>
+                  <a href="#">
+                    Team
+                    <span class="navbar-unread">1</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/players">
+                    Players
+                  </a>
+                  <ul>
+                    <li><a href="#">Women</a>             <!-- First dropdown item -->
+                      <span class="navbar-unread">8</span>
+                      <ul>                                <!-- Sub menu items -->
+                        <li><a href="players/cherri">Cherri</a></li>
+                        <li><a href="players/melanie">Melanie</a></li>
+                        <li><a href="players/jocie">Jocie</a></li>
+                        <li><a href="players/dani">Dani</a></li>
+                        <li><a href="players/stevie">Stevie</a></li>
+                        <li><a href="players/maria">Maria</a></li>
+                        <li><a href="players/dom">Dom</a></li>
+                        <li><a href="players/eileen">Eileen</a></li>
+                      </ul>                                <!-- End Sub menu items -->
+                    </li>
+                    <li><a href="#">Men</a>                <!-- Second dropdown item -->
+                      <span class="navbar-unread">11</span>
+                      <ul>
+                        <li><a href="players/phil">Phil</a></li>
+                        <li><a href="players/jason">Jason</a></li>
+                        <li><a href="players/josh">Josh</a></li>
+                        <li><a href="players/colin">Colin</a></li>
+                        <li><a href="players/steve">Steve</a></li>
+                        <li><a href="players/mark">Mark</a></li>
+                        <li><a href="players/justin">Justin</a></li>
+                        <li><a href="players/zach">Zach</a></li>
+                        <li><a href="players/danny">Danny</a></li>
+                        <li><a href="players/brian">Brian</a></li>
+                        <li><a href="players/erik">Erik</a></li>
+                      </ul>                                 <!-- /Sub menu -->
+                    </li>
+                    <li><a href="/players">All</a>
+                      <span class="navbar-unread">19</span>
+                    </li>
+                  </ul>                                     <!-- /Sub menu -->
+                </li>
+                <li>
+                  <a href="/positions">
+                    Positions
+                  </a>
+                  <ul>
+                    <li><a href="#">Defense</a>                <!-- Second dropdown item -->
+                        <span class="navbar-unread">5</span>
+                        <ul>
+                          <li><a href="players/jason">Jason</a></li>
+                          <li><a href="players/mark">Mark</a></li>
+                          <li><a href="players/danny">Danny</a></li>
+                          <li><a href="players/danny">Stevie</a></li>
+                          <li><a href="players/danny">Maria</a></li>
+                        </ul>                                 <!-- /Sub menu -->
+                    </li>
+
+                    <li><a href="#">Midfield</a>                <!-- Second dropdown item -->
+                        <span class="navbar-unread">8</span>
+                        <ul>
+                          <li><a href="players/colin">Colin</a></li>
+                          <li><a href="players/zach">Zach</a></li>
+                          <li><a href="players/brian">Brian</a></li>
+                          <li><a href="players/erik">Erik</a></li>
+                          <li><a href="players/danny">Eileen</a></li>
+                          <li><a href="players/danny">Melanie</a></li>
+                          <li><a href="players/danny">Jocie</a></li>
+                          <li><a href="players/danny">Dom</a></li>
+                        </ul>                                 <!-- /Sub menu -->
+                    </li>
+
+                    <li><a href="#">Offense</a>                <!-- dropdown item -->
+                        <span class="navbar-unread">5</span>
+                        <ul>
+                          <li><a href="players/phil">Phil</a></li>
+                          <li><a href="players/josh">Josh</a></li>
+                          <li><a href="players/steve">Steve</a></li>
+                          <li><a href="players/danny">Cherri</a></li>
+                          <li><a href="players/danny">Dani</a></li>
+                        </ul>                                           <!-- /Sub menu -->
+                    </li>
+
+                    <li><a href="#">Goalkeepers</a>                     <!-- dropdown item -->
+                      <span class="navbar-unread">1</span>
+                      <ul>
+                        <li><a href="players/justin">Justin</a></li>
+                      </ul>                                             <!-- /Sub menu -->
+                    </li>
+                  </ul>
+                <li>
+                  <a href="/login">
+                    Login
+                  </a>
+                </li>
+              </ul>
+            </div><!--/.nav-collapse -->
+          </div>
+        </div>
+
+        <h6 align="right">
+          <% if logged_in? %>
+            <%= "Logged in as #{current_user.username}" %>
+            <%= link_to "(logout)", logout_path %>
+          <% else %>
+            <%= link_to "(login)", login_path %>
+          <% end %>
+        </h6>
+
+      </div>
+    </div>
+  </div> <!-- /row -->
+</div>

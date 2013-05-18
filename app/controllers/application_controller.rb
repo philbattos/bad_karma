@@ -23,17 +23,18 @@ end
       #~ years on team
       #~ number
   # change "years" view to accept "1 year" or "new player" (for 0 years)
-  # add categories
-    # positions
-    # gender
+  #~ add categories
+    #~ positions
+    #~ gender
   #~ sort/display players by position and/or gender on players page
-  # refactor
+  #~ refactor
     #~ reduce actions in players controller (don't need an action for each player)
     #~ reduce routes (don't need a separate route for each player?)
     #~ find simpler way to create seed data (there is none)
     #~ find shorter way to link (with "player_path")
   #~ allow new players to create their own page
   # allow current players to edit their own info
+    # signing in only allows them to edit their own info
   # make program calculate years_on_team based on created_at date (or new field: "joined_team" date)
     # is is possible to retroactively modify created_at date?
   # create partials
@@ -42,7 +43,7 @@ end
     # create login sessions that retain users identity (username & permissions)
     # establish permissions for users
   # users can view other players pages but not edit them
-  # create site admin to edit any players page
+  #~ create site admin to edit any players page
   #~ player's edit page uses /players/[id]/edit; change to /players/[name]/edit
   # seed data with multiple positions
   # make flash messages work
